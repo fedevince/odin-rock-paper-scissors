@@ -22,21 +22,14 @@ function getHumanChoice(){
     return humanChoice;
 }
 
-let computerScore = 0;
-let humanScore = 0;
-
 // play round:
 // get computer and human choice and save them as string variables
 // ensure human choice is lower case
 // function play round with the two choices as parameters
 // round logic: if equal draw, three if options for each human choice
 // increment score for winner of the round
-const computerSelection = getComputerChoice();
-const humanSelection = getHumanChoice();
 
-console.log(computerSelection)
-console.log(humanSelection)
-
+//function plays round and returns winner
 function playRound(computerSelection, humanSelection) {
     if (computerSelection === humanSelection) {
         console.log("Draw")
@@ -44,30 +37,53 @@ function playRound(computerSelection, humanSelection) {
         if (humanSelection === 'rock' ) {
             if (computerSelection === 'scissors'){
                 console.log(`You won, ${humanSelection} beats ${computerSelection}`)
-                humanScore++
+                return "human"
             } else {
                 console.log(`You lost, ${computerSelection} beats ${humanSelection}`)
-                computerScore++
+                return "computer"
             }
         } else if (humanSelection === "paper") {
             if (computerSelection === "rock"){
                 console.log(`You won, ${humanSelection} beats ${computerSelection}`)
-                humanScore++
+                return "human"
             } else {
                 console.log(`You lost, ${computerSelection} beats ${humanSelection}`)
-                computerScore++
+                return "computer"
             } 
         } else {
             if (computerSelection=== "paper"){
                 console.log(`You won, ${humanSelection} beats ${computerSelection}`)
-                humanScore++
+                return "human"
             } else {
                 console.log(`You lost, ${computerSelection} beats ${humanSelection}`)
-                computerScore++
+                return "computer"
             }
         }
     }
 }
 
-playRound(computerSelection,humanSelection)
-console.log(`Human score: ${humanScore}\nComputer score: ${computerScore}`)
+//playRound(computerSelection,humanSelection)
+
+// Logic to play entire game
+// Declare score int variables
+// Get computer and player choice into string variables
+// call playround() five times
+function playGame() {
+    let computerScore = 0;
+    let humanScore = 0;
+
+    for (let i = 0; i < 5;i++) {
+        const computerSelection = getComputerChoice();
+        const humanSelection = getHumanChoice();
+        let roundWinner = playRound(computerSelection, humanSelection);
+        if (roundWinner === "human"){
+            humanScore++;
+        } else if (roundWinner === "computer") {
+            computerScore++;
+        }
+        console.log(`Current score: Human ${humanScore}: Computer ${computerScore}`)
+        }
+    console.log(`Final score: Human ${humanScore}: Computer ${computerScore}`)
+    }
+
+playGame()
