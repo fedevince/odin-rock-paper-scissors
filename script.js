@@ -9,3 +9,15 @@ function getComputerChoice() {
         return "scissors";
     }
 }
+
+// get human choice:
+// create string variable to human choice
+// ask user for choice
+// loop to validate choice
+function getHumanChoice(){
+    let humanChoice = prompt("Pick rock, paper or scissors.");
+    while (!(humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors")) {
+        humanChoice = prompt("Please enter a valid option ");
+    }
+    return humanChoice;
+}
