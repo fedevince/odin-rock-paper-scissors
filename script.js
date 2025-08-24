@@ -87,3 +87,17 @@ function playRound(computerSelection, humanSelection) {
 //     }
 
 //playGame()
+
+const buttons = document.querySelectorAll("button")
+let humanScore = 0;
+let computerScore = 0;
+let roundsPlayed = 0;
+
+for (option of buttons) {
+        option.addEventListener("click", () => 
+        (playRound(getComputerChoice(), option.id) === 'human')?humanScore++:computerScore++);
+    }
+
+
+    
+    
