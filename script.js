@@ -68,22 +68,22 @@ function playRound(computerSelection, humanSelection) {
 // Declare score int variables
 // Get computer and player choice into string variables
 // call playround() five times
-function playGame() {
-    let computerScore = 0;
-    let humanScore = 0;
+// function playGame() {
+//     let computerScore = 0;
+//     let humanScore = 0;
 
-    for (let i = 0; i < 5;i++) {
-        const computerSelection = getComputerChoice();
-        const humanSelection = getHumanChoice();
-        let roundWinner = playRound(computerSelection, humanSelection);
-        if (roundWinner === "human"){
-            humanScore++;
-        } else if (roundWinner === "computer") {
-            computerScore++;
-        }
-        console.log(`Current score: Human ${humanScore}: Computer ${computerScore}`)
-        }
-    console.log(`Final score: Human ${humanScore}: Computer ${computerScore}`)
-    }
+//     for (let i = 0; i < 5;i++) {
+//         const computerSelection = getComputerChoice();
+//         const humanSelection = getHumanChoice();
+//         let roundWinner = playRound(computerSelection, humanSelection);
+//         if (roundWinner === "human"){
+//             humanScore++;
+//         } else if (roundWinner === "computer") {
+//             computerScore++;
+//         }
+//         console.log(`Current score: Human ${humanScore}: Computer ${computerScore}`)
+//         }
+//     console.log(`Final score: Human ${humanScore}: Computer ${computerScore}`)
+//     }
 
-playGame()
+//playGame()
