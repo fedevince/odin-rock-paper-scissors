@@ -98,16 +98,32 @@ for (option of buttons) {
         option.addEventListener("click", () => 
         {
         let winner = playRound(getComputerChoice(), option.id);
-        (winner === "human")?humanScore++:computerScore++;
+        if (winner === "human")
+            {humanScore++} else if (winner === 'computer')
+                {computerScore++;} 
         roundsPlayed++;
-        scoreDiv.textContent = `The ${winner} won this round!
-        \nTotal rounds played: ${roundsPlayed}.\nCurrent score: player: ${humanScore}: computer ${computerScore}`
+        if (winner) 
+            {scoreDiv.textContent = `The ${winner} won this round!`} else {
+                scoreDiv.textContent = `Draw`
+            }
+
+        scoreDiv.textContent += `\nTotal rounds played: ${roundsPlayed}.\nCurrent score: player: ${humanScore}: computer ${computerScore}`
+        if (roundsPlayed === 5) {
+            scoreDiv.textContent = "GAME OVER! ";
+            if (humanScore > computerScore) {
+                scoreDiv.textContent += "CONGRATULATIONS, YOU WON! 🥇"
+            } else if (computerScore > humanScore) {
+                scoreDiv.textContent += "SORRY, YOU LOST 😞"
+            } else {
+                scoreDiv.textContent += "Draw"
+            }
+            roundsPlayed = 0;
+            humanScore = 0;
+            computerScore = 0;
+        }
     }
     ); 
     }
-
-if (roundsPlayed !== 0) scoreDiv.textContent = `Current Score: Player: ${humanScore}: Computer: ${computerScore}`;
-
 
 
 

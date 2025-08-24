@@ -2,6 +2,8 @@ html {
     box-sizing: border-box;
     margin : 0;
     padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
 }
 
 body {
@@ -36,6 +38,7 @@ button:hover {
 
 .score {
     white-space: pre-wrap;
+    text-align: center;
 }
 
 .container {
