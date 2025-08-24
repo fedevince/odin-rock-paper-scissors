@@ -1,0 +1,45 @@
+html {
+    box-sizing: border-box;
+    margin : 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+}
+
+.game {
+    background-color: white;
+    border: solid lightgray 1px;
+    padding: 25px;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+button {
+    padding: 30px;
+    border-radius: 20%;
+}
+
+button:hover {
+    scale: 1.2;
+    border: solid darkgray 4px;
+}
+
+.score {
+    white-space: pre-wrap;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+

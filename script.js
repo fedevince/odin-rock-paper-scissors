@@ -89,14 +89,26 @@ function playRound(computerSelection, humanSelection) {
 //playGame()
 
 const buttons = document.querySelectorAll("button")
+const scoreDiv = document.querySelector(".score")
 let humanScore = 0;
 let computerScore = 0;
 let roundsPlayed = 0;
 
 for (option of buttons) {
         option.addEventListener("click", () => 
-        (playRound(getComputerChoice(), option.id) === 'human')?humanScore++:computerScore++);
+        {
+        let winner = playRound(getComputerChoice(), option.id);
+        (winner === "human")?humanScore++:computerScore++;
+        roundsPlayed++;
+        scoreDiv.textContent = `The ${winner} won this round!
+        \nTotal rounds played: ${roundsPlayed}.\nCurrent score: player: ${humanScore}: computer ${computerScore}`
     }
+    ); 
+    }
+
+if (roundsPlayed !== 0) scoreDiv.textContent = `Current Score: Player: ${humanScore}: Computer: ${computerScore}`;
+
+
 
 
     
